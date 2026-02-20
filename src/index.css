@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,88 +10,61 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Blue-themed palette */
+    --background: 214 40% 97%;
+    --foreground: 220 60% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 60% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 60% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep navy blue */
+    --primary: 220 73% 18%;
+    --primary-foreground: 210 100% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Royal blue */
+    --secondary: 217 91% 35%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Sky blue accent */
+    --accent: 210 100% 56%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 214 40% 93%;
+    --muted-foreground: 215 25% 40%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 40% 88%;
+    --input: 214 40% 88%;
+    --ring: 217 91% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Resume-specific tokens */
+    --resume-navy: 220 73% 18%;
+    --resume-royal: 217 91% 35%;
+    --resume-sky: 210 100% 56%;
+    --resume-ice: 214 80% 96%;
+    --resume-sidebar: 220 50% 14%;
+    --resume-sidebar-text: 210 60% 90%;
+    --resume-divider: 210 60% 75%;
+
+    --gradient-header: linear-gradient(135deg, hsl(220, 73%, 18%) 0%, hsl(217, 91%, 28%) 60%, hsl(210, 100%, 38%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(220, 50%, 14%) 0%, hsl(218, 60%, 20%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(217, 91%, 35%, 0.18);
+    --shadow-header: 0 8px 32px -8px hsl(220, 73%, 10%, 0.4);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -101,5 +76,316 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
   }
 }
+
+@layer components {
+  .resume-wrapper {
+    background: hsl(var(--background));
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .resume-paper {
+    width: 100%;
+    max-width: 900px;
+    background: hsl(0 0% 100%);
+    border-radius: 1rem;
+    box-shadow: 0 8px 40px -8px hsl(220 73% 18% / 0.22), 0 0 0 1px hsl(var(--border));
+    overflow: hidden;
+  }
+
+  .resume-header {
+    background: linear-gradient(135deg, hsl(220, 73%, 18%) 0%, hsl(217, 91%, 28%) 60%, hsl(210, 100%, 38%) 100%);
+    padding: 2.5rem 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resume-header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: hsl(210 100% 56% / 0.12);
+  }
+
+  .resume-header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: 80px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: hsl(210 100% 56% / 0.08);
+  }
+
+  .resume-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: hsl(0 0% 100%);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .resume-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(210 100% 80%);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .resume-header-line {
+    width: 60px;
+    height: 3px;
+    background: hsl(var(--accent));
+    border-radius: 2px;
+    margin: 1rem 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .resume-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 600px;
+  }
+
+  .resume-sidebar {
+    background: linear-gradient(180deg, hsl(220, 50%, 14%) 0%, hsl(218, 60%, 20%) 100%);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sidebar-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: hsl(210 100% 56% / 0.3);
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    color: hsl(210 60% 90%);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .sidebar-icon {
+    color: hsl(var(--accent));
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .skill-badge {
+    display: inline-block;
+    background: hsl(210 100% 56% / 0.15);
+    color: hsl(210 60% 90%);
+    border: 1px solid hsl(210 100% 56% / 0.3);
+    border-radius: 4px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin: 0.2rem;
+  }
+
+  .language-item {
+    margin-bottom: 0.9rem;
+  }
+
+  .language-name {
+    color: hsl(210 60% 90%);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .language-bar {
+    height: 4px;
+    background: hsl(210 100% 56% / 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .language-fill {
+    height: 100%;
+    background: linear-gradient(90deg, hsl(var(--accent)), hsl(217 91% 35%));
+    border-radius: 2px;
+  }
+
+  .resume-main {
+    padding: 2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .main-section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(217 91% 35%);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .main-section-title::before {
+    content: '';
+    width: 18px;
+    height: 3px;
+    background: hsl(var(--accent));
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .main-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: hsl(var(--border));
+  }
+
+  .summary-text {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: hsl(var(--muted-foreground));
+    border-left: 3px solid hsl(var(--accent));
+    padding: 1rem 1rem 1rem 1.25rem;
+    background: hsl(214 80% 96%);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .edu-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  .edu-table thead tr {
+    background: hsl(220 73% 18%);
+    color: hsl(210 100% 97%);
+  }
+
+  .edu-table thead th {
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .edu-table thead th:first-child { border-radius: 0.4rem 0 0 0.4rem; }
+  .edu-table thead th:last-child { border-radius: 0 0.4rem 0.4rem 0; }
+
+  .edu-table tbody tr {
+    border-bottom: 1px solid hsl(var(--border));
+    transition: background 0.15s;
+  }
+
+  .edu-table tbody tr:hover { background: hsl(214 80% 96%); }
+  .edu-table tbody tr:last-child { border-bottom: none; }
+
+  .edu-table tbody td {
+    padding: 0.75rem 0.9rem;
+    color: hsl(var(--foreground));
+    vertical-align: top;
+  }
+
+  .edu-table tbody td:first-child {
+    font-weight: 500;
+    color: hsl(220 73% 18%);
+  }
+
+  .edu-year {
+    color: hsl(217 91% 35%);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .edu-cgpa {
+    font-weight: 600;
+    color: hsl(var(--accent));
+  }
+
+  .strength-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.8rem;
+    background: hsl(214 80% 96%);
+    border-left: 3px solid hsl(var(--accent));
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .strength-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: hsl(var(--accent));
+    flex-shrink: 0;
+  }
+
+  .hobby-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: hsl(214 80% 96%);
+    border: 1px solid hsl(var(--border));
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: hsl(217 91% 35%);
+    margin: 0.2rem;
+  }
+}
+
