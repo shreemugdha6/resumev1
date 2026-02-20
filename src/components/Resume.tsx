@@ -103,7 +103,7 @@ const Resume = () => {
             {/* Career Objective */}
             <section>
               <div className="main-section-title">Career Objective</div>
-              <p className="summary-text" style={{ borderLeftColor: "hsl(217 91% 35%)", background: "hsl(195 100% 88%)" }}>
+              <p className="summary-text" style={{ borderLeftColor: "hsl(217 91% 35%)", background: "hsl(214 60% 97%)" }}>
                 To build a career in digital marketing and brand strategy by leveraging creativity, data-driven thinking, and emerging technologies, while continuously learning and contributing to the growth of innovative organizations.
               </p>
             </section>
@@ -165,7 +165,7 @@ const Resume = () => {
 
         {/* Footer */}
         <div style={{
-          background: "hsl(195 100% 91%)",
+          background: "hsl(214 80% 96%)",
           borderTop: "1px solid hsl(var(--border))",
           padding: "0.75rem 2.2rem",
           display: "flex",

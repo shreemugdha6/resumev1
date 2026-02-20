@@ -10,9 +10,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* #D4F6FF icy sky blue palette */
-    --background: 195 100% 91%;
-    --foreground: 210 60% 10%;
+    /* Blue-themed palette */
+    --background: 214 40% 97%;
+    --foreground: 220 60% 8%;
 
     --card: 0 0% 100%;
     --card-foreground: 220 60% 8%;
@@ -32,13 +32,13 @@ All colors MUST be HSL.
     --accent: 210 100% 56%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 195 80% 84%;
-    --muted-foreground: 210 30% 38%;
+    --muted: 214 40% 93%;
+    --muted-foreground: 215 25% 40%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 195 60% 78%;
+    --border: 214 40% 88%;
     --input: 214 40% 88%;
     --ring: 217 91% 50%;
 
@@ -48,7 +48,7 @@ All colors MUST be HSL.
     --resume-navy: 220 73% 18%;
     --resume-royal: 217 91% 35%;
     --resume-sky: 210 100% 56%;
-    --resume-ice: 195 100% 91%;
+    --resume-ice: 214 80% 96%;
     --resume-sidebar: 220 50% 14%;
     --resume-sidebar-text: 210 60% 90%;
     --resume-divider: 210 60% 75%;
@@ -295,7 +295,7 @@ All colors MUST be HSL.
     color: hsl(var(--muted-foreground));
     border-left: 3px solid hsl(var(--accent));
     padding: 1rem 1rem 1rem 1.25rem;
-    background: hsl(195 100% 91%);
+    background: hsl(214 80% 96%);
     border-radius: 0 0.5rem 0.5rem 0;
   }
 
@@ -327,7 +327,7 @@ All colors MUST be HSL.
     transition: background 0.15s;
   }
 
-  .edu-table tbody tr:hover { background: hsl(195 100% 91%); }
+  .edu-table tbody tr:hover { background: hsl(214 80% 96%); }
   .edu-table tbody tr:last-child { border-bottom: none; }
 
   .edu-table tbody td {
@@ -357,7 +357,9 @@ All colors MUST be HSL.
     align-items: center;
     gap: 0.6rem;
     padding: 0.55rem 0.8rem;
-    background: hsl(195 100% 91%);
+    background: hsl(214 80% 96%);
+    border-left: 3px solid hsl(var(--accent));
+    border-radius: 0 0.4rem 0.4rem 0;
     font-size: 0.875rem;
     color: hsl(var(--foreground));
     font-weight: 500;
@@ -376,7 +378,9 @@ All colors MUST be HSL.
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background: hsl(195 100% 91%);
+    background: hsl(214 80% 96%);
+    border: 1px solid hsl(var(--border));
+    border-radius: 999px;
     padding: 0.35rem 0.85rem;
     font-size: 0.82rem;
     font-weight: 500;
